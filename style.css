@@ -1,3 +1,9 @@
+div.jumbotron {
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
 .card-head {
   display: flex;
   justify-content: space-between;
