@@ -1,0 +1,33 @@
+.card-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-head span {
+  display: flex;
+  align-items: center;
+}
+
+.card-date,
+.card-time,
+.card-venue {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-bottom a {
+  display: flex;
+  align-items: center;
+}
+
+.read-more-link {
+  /* color: blue; */
+  text-decoration: underline;
+  font-size: small;
+  cursor: pointer;
+}
