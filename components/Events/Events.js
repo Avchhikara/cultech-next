@@ -4,7 +4,7 @@ import { Row, Col } from "reactstrap";
 
 import Event from "./Event";
 
-const Events = ({ team, individual }) => {
+const Events = ({ team = [], individual = [] }) => {
   return (
     <Row>
       <Col sm="12">

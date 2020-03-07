@@ -1,8 +1,9 @@
-import { base_url } from "./../../utils/constants";
+import { base_url } from "./../utils/constants";
 import fetch from "isomorphic-unfetch";
-import Events from "./../../components/Events/Events";
+import Events from "./../components/Events/Events";
 
 const EventsPage = events => {
+  console.log(events);
   return (
     <div>
       <Events {...events} />

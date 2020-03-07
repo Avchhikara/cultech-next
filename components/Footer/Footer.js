@@ -4,7 +4,7 @@ import { Jumbotron } from "reactstrap";
 
 const Footer = props => {
   return (
-    <div>
+    <div className="mt-4">
       <Jumbotron>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor
         nihil harum fuga, aliquam dolore eos aut fugiat amet adipisci itaque,

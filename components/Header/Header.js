@@ -6,17 +6,24 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink
+  NavLink,
+  Button
 } from "reactstrap";
 
 import Link from "next/link";
 
+import Cookies from "js-cookie";
+
 import { app_url } from "./../../utils/constants";
 
 const Header = props => {
+  //   console.log(props);
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleNavbar = () => setCollapsed(!collapsed);
+
+  const isLogged = Cookies.get("token");
+  //   console.log(isLogged);
 
   return (
     <div className="mb-2">
@@ -43,25 +50,21 @@ const Header = props => {
             </NavItem>
             <NavItem>
               <NavLink>
-                <a
-                  href={app_url + "/login"}
-                  role="button"
-                  className="btn btn-outline-success btn-sm"
-                >
-                  Login
-                </a>
+                <Link href={"/login"}>
+                  <Button color="success" outline size="sm">
+                    Login
+                  </Button>
+                </Link>
               </NavLink>
             </NavItem>
 
             <NavItem>
               <NavLink>
-                <a
-                  href={app_url + "/login"}
-                  role="button"
-                  className="btn btn-success btn-sm"
-                >
-                  Register
-                </a>
+                <Link href="/register">
+                  <Button size="sm" color="success">
+                    Register
+                  </Button>
+                </Link>
               </NavLink>
             </NavItem>
           </Nav>
