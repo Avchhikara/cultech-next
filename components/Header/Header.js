@@ -14,7 +14,10 @@ import Link from "next/link";
 
 import Cookies from "js-cookie";
 
+import NotLoggedIn from "./NotLoggedIn";
+import LoggedIn from "./LoggedIn";
 import { app_url } from "./../../utils/constants";
+// import {isLogged} from './../../utils/auth';
 
 const Header = props => {
   //   console.log(props);
@@ -23,7 +26,6 @@ const Header = props => {
   const toggleNavbar = () => setCollapsed(!collapsed);
 
   const isLogged = Cookies.get("token");
-  //   console.log(isLogged);
 
   return (
     <div className="mb-2">
@@ -48,25 +50,7 @@ const Header = props => {
                 </Link>
               </NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink>
-                <Link href={"/login"}>
-                  <Button color="success" outline size="sm">
-                    Login
-                  </Button>
-                </Link>
-              </NavLink>
-            </NavItem>
-
-            <NavItem>
-              <NavLink>
-                <Link href="/register">
-                  <Button size="sm" color="success">
-                    Register
-                  </Button>
-                </Link>
-              </NavLink>
-            </NavItem>
+            {isLogged ? <LoggedIn /> : <NotLoggedIn />}
           </Nav>
         </Collapse>
       </Navbar>

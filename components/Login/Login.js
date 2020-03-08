@@ -1,6 +1,8 @@
 import React from "react";
 import fetch from "isomorphic-unfetch";
 import Link from "next/link";
+import Cookies from "js-cookie";
+import Router from "next/router";
 
 import {
   Card,
@@ -16,6 +18,7 @@ import {
 } from "reactstrap";
 
 import { validateEmail } from "./../../utils/validate";
+import { base_url } from "./../../utils/constants";
 
 class Login extends React.Component {
   constructor(props) {
@@ -31,7 +34,8 @@ class Login extends React.Component {
     };
   }
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
+    e.preventDefault();
     //   First, disabling the logging button
     this.setState({ logging_in: true });
 
@@ -53,12 +57,52 @@ class Login extends React.Component {
       });
       this.resetResponse();
     } else {
-      //   Making a fetch request here
+      const { email, password } = this.state;
+      try {
+        //   Making a fetch request here
+        const response = await fetch(base_url + "/login", {
+          method: "POST",
+          body: JSON.stringify({
+            email,
+            password
+          }),
+          headers: {
+            "content-type": "application/json"
+          }
+        });
+        const data = await response.json();
+        // Setting the status
+        this.setMessage(
+          "Login successfull, you will be logged in now! Please wait.."
+        );
+        // Saving the cookies
+        Cookies.set("token", data.data);
+        // const router = useRouter();
+        Router.push("/dashboard");
+      } catch (err) {
+        this.setErr(err.message || "An error has occurred, please contact us!");
+      }
     }
 
     // And then doing other stuff
     this.setState({ logging_in: false });
-    e.preventDefault();
+  };
+
+  setErr = message => {
+    this.setState({
+      message,
+      status: 400
+    });
+    this.resetResponse();
+  };
+
+  setMessage = message => {
+    this.setState({
+      response: {
+        message,
+        status: 200
+      }
+    });
   };
 
   onEmailChange = e => {

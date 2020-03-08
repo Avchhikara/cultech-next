@@ -3,7 +3,6 @@ import fetch from "isomorphic-unfetch";
 import Events from "./../components/Events/Events";
 
 const EventsPage = events => {
-  console.log(events);
   return (
     <div>
       <Events {...events} />

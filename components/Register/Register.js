@@ -2,20 +2,12 @@ import React from "react";
 import fetch from "isomorphic-unfetch";
 import Link from "next/link";
 
-import {
-  Card,
-  CardBody,
-  Row,
-  Col,
-  FormGroup,
-  Label,
-  Input,
-  Button,
-  Alert
-} from "reactstrap";
+import { Card, CardBody, Row, Col, Button, Alert } from "reactstrap";
 
 import Form1 from "./Form1";
 import Form2 from "./Form2";
+
+import { base_url } from "./../../utils/constants";
 
 import {
   validateEmail,
@@ -45,6 +37,49 @@ class Register extends React.Component {
       formNum: 1
     };
   }
+
+  handleSubmit = async e => {
+    this.setState({ registering: true });
+    if (this.validateForm1() && this.validateForm2()) {
+      const { name, email, password, rollno, phone, year, branch } = this.state;
+      try {
+        const res = await fetch(base_url + "/register", {
+          method: "POST",
+          body: JSON.stringify({
+            name,
+            email,
+            password,
+            rollno,
+            phone,
+            year,
+            branch
+          }),
+          headers: {
+            "content-type": "application/json"
+          }
+        });
+        const data = await res.json();
+
+        if (res.status === 200) this.setSuccess(data.message);
+        else {
+          this.setError(data.message);
+        }
+      } catch (err) {
+        this.setError(err.message || "You seems to be offline");
+      }
+    }
+
+    this.setState({ registering: false });
+  };
+
+  setSuccess = message => {
+    this.setState({
+      response: {
+        message,
+        status: 200
+      }
+    });
+  };
 
   changeForm = (formNum = 2) => {
     if (formNum === 2 && this.validateForm1()) {
@@ -91,16 +126,6 @@ class Register extends React.Component {
     });
     this.resetResponse();
   }
-
-  handleSubmit = e => {
-    this.setState({ registering: true });
-    if (this.validateForm2()) {
-      // Now, making the required backend calls
-      console.log("Everything is valid");
-    }
-
-    this.setState({ registering: false });
-  };
 
   onEmailChange = e => {
     this.setState({ email: e.target.value });
@@ -204,6 +229,12 @@ class Register extends React.Component {
                   </div>
                 )}
               </Col>
+              <div className="text-right mt-4">
+                Already a user?{" "}
+                <Link href="/login">
+                  <a>Login here!</a>
+                </Link>
+              </div>
             </CardBody>
           </Card>
         </Col>
