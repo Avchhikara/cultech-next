@@ -17,7 +17,7 @@ import {
   Alert
 } from "reactstrap";
 
-import { validateEmail } from "./../../utils/validate";
+import { validateEmail, validatePassword } from "./../../utils/validate";
 import { base_url } from "./../../utils/constants";
 
 class Login extends React.Component {
@@ -41,21 +41,9 @@ class Login extends React.Component {
 
     const { email, password } = this.state;
     if (!validateEmail(email)) {
-      this.setState({
-        response: {
-          message: "Email you have entered is not valid",
-          status: 404
-        }
-      });
-      this.resetResponse();
-    } else if (!password) {
-      this.setState({
-        response: {
-          message: "Please enter a password",
-          status: 404
-        }
-      });
-      this.resetResponse();
+      this.setErr("Email you have entered is not valid");
+    } else if (!validatePassword(password)) {
+      this.setErr("Please enter a password");
     } else {
       const { email, password } = this.state;
       try {
@@ -70,7 +58,10 @@ class Login extends React.Component {
             "content-type": "application/json"
           }
         });
+
         const data = await response.json();
+
+        if (response.status !== 200) throw Error(data.message);
         // Setting the status
         this.setMessage(
           "Login successfull, you will be logged in now! Please wait.."
@@ -90,8 +81,10 @@ class Login extends React.Component {
 
   setErr = message => {
     this.setState({
-      message,
-      status: 400
+      response: {
+        message,
+        status: 400
+      }
     });
     this.resetResponse();
   };
