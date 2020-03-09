@@ -65,3 +65,18 @@ li.breadcrumb-item span {
 div.footer ul {
   list-style: none;
 }
+
+/* .home-top-image {
+  height: 80vh;
+  width: 100%;
+  background-color: azure;
+  background: url("https://res.cloudinary.com/mrmagician/image/upload/v1583792412/eced_fbfunz.png") !important;
+  background-size: cover;
+  background-repeat: no-repeat !important;
+   background-position: center;
+ } 
+ */
+
+.home-fullpage {
+  height: 80vh;
+}
