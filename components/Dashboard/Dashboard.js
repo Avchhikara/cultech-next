@@ -14,6 +14,7 @@ import {
 } from "reactstrap";
 
 import NonTeamEvent from "./NonTeamEvent";
+import TeamEvent from "./TeamEvent";
 
 import { base_url } from "./../../utils/constants";
 
@@ -33,9 +34,38 @@ class Dashboard extends React.Component {
     }
   }
 
-  handleUnEnroll = enrollment_id => {
-    console.log("Unenroll");
+  filterEnrollments = enrollment_id => {
+    const { enrollments } = this.state;
+    const new_enrollments = enrollments.filter(
+      en => en.enrollment_id !== enrollment_id
+    );
+    if (new_enrollments.length !== enrollments)
+      this.setState({ enrollments: new_enrollments });
+  };
+
+  handleUnEnroll = async (enrollment_id, event_id) => {
+    // console.log("Unenroll");
     const { token } = this.props;
+    try {
+      const res = await fetch(base_url + "/unenroll", {
+        method: "POST",
+        body: JSON.stringify({
+          token,
+          event_id,
+          enrollment_id
+        }),
+        headers: {
+          "content-type": "application/json"
+        }
+      });
+
+      const data = await res.json();
+      if (res.status !== 200) throw Error("Error in unenrolling");
+      this.filterEnrollments(enrollment_id);
+    } catch (err) {
+      this.setState({ gettingEnrollments: true });
+      this.setState({ gettingEnrollments: false });
+    }
   };
 
   getEnrollments = async () => {
@@ -76,15 +106,31 @@ class Dashboard extends React.Component {
     }
 
     // Returning the enrollments array
-    return enrollments.map(enrollment => {
+    return enrollments.map((enrollment, index) => {
       if (enrollment.team_size === 1) {
         return (
-          <NonTeamEvent {...enrollment} onUnenroll={this.handleUnEnroll} />
+          <NonTeamEvent
+            {...enrollment}
+            onUnenroll={this.handleUnEnroll}
+            key={index}
+          />
         );
       }
+      return (
+        <TeamEvent
+          {...enrollment}
+          key={index}
+          onUnenroll={this.handleUnEnroll}
+        />
+      );
     });
 
     // console.log(enrollments);
+  };
+
+  handleDeleteTeam = team_id => {
+    //   Always show an alert to user
+    console.log("Delete team");
   };
 
   render() {

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import fetch from "isomorphic-unfetch";
 import { Card, CardBody, Badge, Collapse, Button } from "reactstrap";
 
 import formatDate from "./../../utils/formatDate";
@@ -16,7 +15,8 @@ const NonTeamEvent = ({
   end_time,
   date_of_event,
   onUnenroll,
-  enrollment_id
+  enrollment_id,
+  event_id
 }) => {
   const [fullMode, setFullMode] = useState(false);
   const [removing, setRemoving] = useState(false);
@@ -59,7 +59,7 @@ const NonTeamEvent = ({
             size="sm"
             onClick={() => {
               setRemoving(true);
-              onUnenroll(enrollment_id);
+              onUnenroll(enrollment_id, event_id);
             }}
             disabled={removing}
           >
