@@ -18,7 +18,10 @@ const Footer = props => {
             <h5>Quick Links</h5>
             <ul>
               <li>
-                <a href="./../../public/cultech brouchre.pdf" download>
+                <a
+                  href="https://drive.google.com/file/d/1mITg1ifgbtuSSfnzvi_KULsBPDrgmFzY/view?usp=sharing"
+                  target="_blank"
+                >
                   Brochure
                 </a>
               </li>

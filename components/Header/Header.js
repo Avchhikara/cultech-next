@@ -39,9 +39,9 @@ const Header = props => {
             <NavItem>
               <NavLink>
                 <a
-                  href="./../../public/cultech brouchre.pdf"
+                  href="https://drive.google.com/file/d/1mITg1ifgbtuSSfnzvi_KULsBPDrgmFzY/view?usp=sharing"
                   className="nav-link"
-                  download
+                  target="_blank"
                 >
                   Brochure
                 </a>
