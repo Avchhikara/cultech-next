@@ -13,13 +13,15 @@ const LoggedIn = props => {
           </Link>
         </NavLink>
       </NavItem>
-      <NavItem>
-        <NavLink>
-          <Link href="/profile">
-            <span>Profile</span>
-          </Link>
-        </NavLink>
-      </NavItem>
+      {
+        //   <NavItem>
+        //   <NavLink>
+        //     <Link href="/profile">
+        //       <span>Profile</span>
+        //     </Link>
+        //   </NavLink>
+        // </NavItem>
+      }
       <NavItem>
         <NavLink>
           <Link href="/logout">

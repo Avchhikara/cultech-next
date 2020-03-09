@@ -21,7 +21,7 @@ const Event = ({
   onEnroll
 }) => {
   const [fullMode, setFullMode] = useState(false);
-  console.log(id);
+  // console.log(id);
   const toggle = () => {
     Router.push(`/event/${id}`);
   };

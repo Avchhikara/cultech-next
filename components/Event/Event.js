@@ -1,6 +1,7 @@
 import React from "react";
 import fetch from "isomorphic-unfetch";
-import { Spinner, Row, Col } from "reactstrap";
+import Link from "next/link";
+import { Spinner, Row, Col, Breadcrumb, BreadcrumbItem } from "reactstrap";
 
 import Eve from "./Eve.js";
 import { base_url } from "./../../utils/constants";
@@ -64,6 +65,21 @@ class Event extends React.Component {
   render() {
     return (
       <Row>
+        <Col sm={12}>
+          <Breadcrumb>
+            <BreadcrumbItem>
+              <Link href="/">
+                <span>Home</span>
+              </Link>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <Link href="/events">
+                <span>Events</span>
+              </Link>
+            </BreadcrumbItem>
+            <BreadcrumbItem active>Event Details</BreadcrumbItem>
+          </Breadcrumb>
+        </Col>
         <Col sm={12}>
           <h4>Event Details</h4>
         </Col>

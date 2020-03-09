@@ -51,3 +51,9 @@ div.card-details h3,
 div.card-details h2 {
   font-size: medium;
 }
+
+li.breadcrumb-item span {
+  color: green;
+  text-decoration: underline;
+  cursor: pointer;
+}
