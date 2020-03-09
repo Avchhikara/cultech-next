@@ -6,8 +6,6 @@ import Head from "next/head";
 import Header from "./../components/Header/Header";
 import Footer from "./../components/Footer/Footer";
 
-import { isLogged } from "./../utils/auth";
-
 // Bootstrap CSS file
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -43,11 +41,5 @@ class MyApp extends App {
     );
   }
 }
-
-// App.getInitialProps = ctx => {
-//   const out = isLogged(ctx);
-
-//   return { isLogged: !!out };
-// };
 
 export default MyApp;

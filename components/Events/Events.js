@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Row, Col, Alert } from "reactstrap";
-
+import { Row, Col, Alert, Breadcrumb, BreadcrumbItem } from "reactstrap";
+import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 
 import { isLogged } from "./../../utils/auth";
@@ -88,6 +88,16 @@ class Events extends React.Component {
     const { message, status } = response;
     return (
       <Row>
+        <Col sm={12}>
+          <Breadcrumb>
+            <BreadcrumbItem>
+              <Link href="/">
+                <span>Home</span>
+              </Link>
+            </BreadcrumbItem>
+            <BreadcrumbItem active>Events</BreadcrumbItem>
+          </Breadcrumb>
+        </Col>
         <Col sm="12">
           <h4>Events</h4>
         </Col>
