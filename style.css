@@ -57,3 +57,11 @@ li.breadcrumb-item span {
   text-decoration: underline;
   cursor: pointer;
 }
+
+.carousel {
+  height: 360px;
+}
+
+div.footer ul {
+  list-style: none;
+}

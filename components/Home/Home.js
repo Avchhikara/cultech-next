@@ -3,6 +3,7 @@ import Router from "next/router";
 
 import TCoord from "./TeacherCoordinators";
 import SCoord from "./StudentCoordinators";
+import Carousel from "./Carousel";
 
 const Home = props => {
   return (
