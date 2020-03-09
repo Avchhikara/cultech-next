@@ -8,7 +8,6 @@ const DashboardPage = props => {
 
 DashboardPage.getInitialProps = async ctx => {
   const token = await auth(ctx);
-  //   console.log(token);
   return { token };
 };
 

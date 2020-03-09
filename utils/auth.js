@@ -1,5 +1,5 @@
 import nextCookie from "next-cookies";
-
+import Cookies from "js-cookie";
 export const auth = ctx => {
   const { token } = nextCookie(ctx);
   if (ctx.req && !token) {
@@ -11,7 +11,10 @@ export const auth = ctx => {
 };
 
 export const isLogged = ctx => {
-  //   console.log(ctx);
+  return Cookies.get("token");
+};
+
+export const getToken = ctx => {
   const { token } = nextCookie(ctx);
-  return token && token !== "";
+  return token;
 };

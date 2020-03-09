@@ -1,32 +1,31 @@
-import React, { useState } from "react";
-
+import { useState } from "react";
+import fetch from "isomorphic-unfetch";
 import { Card, CardBody, Badge, Collapse, Button } from "reactstrap";
-
-import LoggedIn from "./LoggedIn";
-import NotLoggedIn from "./NotLoggedIn";
 
 import formatDate from "./../../utils/formatDate";
 import formatTime from "./../../utils/formatTime";
 
-const Event = ({
-  id = "",
-  name = "",
-  date_of_event = "",
-  start_time,
-  end_time,
+import { base_url } from "./../../utils/constants";
+
+const NonTeamEvent = ({
   venue,
+  name,
   details,
   team_size,
-  isLogged,
-  onEnroll
+  start_time,
+  end_time,
+  date_of_event,
+  onUnenroll,
+  enrollment_id
 }) => {
   const [fullMode, setFullMode] = useState(false);
+  const [removing, setRemoving] = useState(false);
 
   const toggle = () => {
     setFullMode(!fullMode);
   };
   return (
-    <Card className="mt-2">
+    <Card className="mb-4">
       <CardBody>
         <div className="card-head">
           <h5>{name}</h5>
@@ -54,16 +53,19 @@ const Event = ({
           ></div>
         </Collapse>
         <div className="card-bottom">
-          {isLogged ? (
-            <LoggedIn
-              name={name}
-              id={id}
-              team_size={team_size}
-              onEnroll={onEnroll}
-            />
-          ) : (
-            <NotLoggedIn team_size={team_size} />
-          )}
+          <Button
+            color="danger"
+            outline
+            size="sm"
+            onClick={() => {
+              setRemoving(true);
+              onUnenroll(enrollment_id);
+            }}
+            disabled={removing}
+          >
+            {removing ? "UnEnrolling..." : "UnEnroll"}
+          </Button>
+
           <span className="read-more-link" color="light" onClick={toggle}>
             Show {fullMode ? "less" : "more"}
           </span>
@@ -73,4 +75,4 @@ const Event = ({
   );
 };
 
-export default Event;
+export default NonTeamEvent;

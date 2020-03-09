@@ -30,7 +30,7 @@ const Header = props => {
   return (
     <div className="mb-2">
       <Navbar color="light" light expand="md">
-        <NavbarBrand className="mr-auto">
+        <NavbarBrand className="mr-auto text-success">
           <strong>CulTech</strong>
         </NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
