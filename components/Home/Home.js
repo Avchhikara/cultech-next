@@ -31,20 +31,7 @@ const Home = props => {
           <Rules />
         </Col>
       </Row>
-      <Row>
-        <Col sm={10} className="m-auto">
-          <hr />
-          <h4 className="text-success">People behind it</h4>
-        </Col>
-      </Row>
-      <Row className="text-center mb-4">
-        <h5 className="m-auto">Teacher Coordinators</h5>
-      </Row>
-      <TCoord />
-      <Row className="mt-4 mb-4">
-        <h5 className="m-auto">Student Coordinators</h5>
-      </Row>
-      <SCoord />
+
       <Row className="mt-4">
         <Col sm={10} className="m-auto mt-3 ">
           <Card color="light">
