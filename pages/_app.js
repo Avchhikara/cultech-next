@@ -33,7 +33,7 @@ class MyApp extends App {
           }
         `}</style>
         <Header />
-        <div className="container" style={{ minHeight: "70vh" }}>
+        <div className="container" style={{ minHeight: "90vh" }}>
           <Component {...pageProps} />
         </div>
         <Footer />
