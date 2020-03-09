@@ -1,14 +1,10 @@
-import React, { useState } from "react";
-import Router from "next/router";
+import { useState } from "react";
 import { Card, CardBody, Badge, Collapse, Button } from "reactstrap";
-
-import LoggedIn from "./LoggedIn";
-import NotLoggedIn from "./NotLoggedIn";
 
 import formatDate from "./../../utils/formatDate";
 import formatTime from "./../../utils/formatTime";
 
-const Event = ({
+const Eve = ({
   id = "",
   name = "",
   date_of_event = "",
@@ -16,15 +12,8 @@ const Event = ({
   end_time,
   venue,
   details,
-  team_size,
-  isLogged,
-  onEnroll
+  team_size
 }) => {
-  const [fullMode, setFullMode] = useState(false);
-  console.log(id);
-  const toggle = () => {
-    Router.push(`/event/${id}`);
-  };
   return (
     <Card className="mt-2">
       <CardBody>
@@ -47,30 +36,16 @@ const Event = ({
             <strong>Date</strong>: {formatDate(date_of_event)}
           </div>
         </div>
-        <Collapse isOpen={fullMode}>
-          <div
-            className="card-details mt-2"
-            dangerouslySetInnerHTML={{ __html: details }}
-          ></div>
-        </Collapse>
+
+        <div
+          className="card-details mt-2"
+          dangerouslySetInnerHTML={{ __html: details }}
+        ></div>
         <div className="card-bottom">
-          {isLogged ? (
-            <LoggedIn
-              name={name}
-              id={id}
-              team_size={team_size}
-              onEnroll={onEnroll}
-            />
-          ) : (
-            <NotLoggedIn team_size={team_size} />
-          )}
-          <span className="read-more-link" color="light" onClick={toggle}>
-            Show {fullMode ? "less" : "more"}
-          </span>
+          <div>to enroll, login and check the events page</div>
         </div>
       </CardBody>
     </Card>
   );
 };
-
-export default Event;
+export default Eve;
