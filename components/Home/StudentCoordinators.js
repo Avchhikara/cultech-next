@@ -7,7 +7,7 @@ const SCoord = () => {
         <Card>
           <CardBody>
             <CardTitle>Deepanshu</CardTitle>
-            Phone no. 8607709395
+            8607709395
           </CardBody>
         </Card>
       </Col>
@@ -15,7 +15,7 @@ const SCoord = () => {
         <Card>
           <CardBody>
             <CardTitle>Komal</CardTitle>
-            Phone no. 7056600039
+            7056600039
           </CardBody>
         </Card>
       </Col>
@@ -23,7 +23,7 @@ const SCoord = () => {
         <Card>
           <CardBody>
             <CardTitle>Sagar</CardTitle>
-            Phone no. 8901250971
+            8901250971
           </CardBody>
         </Card>
       </Col>
@@ -31,7 +31,7 @@ const SCoord = () => {
         <Card>
           <CardBody>
             <CardTitle>Harjee</CardTitle>
-            Phone no. 9034019190
+            3rd Year
           </CardBody>
         </Card>
       </Col>
@@ -39,7 +39,7 @@ const SCoord = () => {
         <Card>
           <CardBody>
             <CardTitle>Kushboo</CardTitle>
-            Phone no. 9034421388
+            3rd Year
           </CardBody>
         </Card>
       </Col>
@@ -47,7 +47,7 @@ const SCoord = () => {
         <Card>
           <CardBody>
             <CardTitle>Yash Verma</CardTitle>
-            Phone no. 9138274100
+            2nd Year
           </CardBody>
         </Card>
       </Col>

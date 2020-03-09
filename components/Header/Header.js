@@ -38,6 +38,17 @@ const Header = props => {
           <Nav navbar className="ml-auto">
             <NavItem>
               <NavLink>
+                <a
+                  href="./../../public/cultech brouchre.pdf"
+                  className="nav-link"
+                  download
+                >
+                  Brochure
+                </a>
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink>
                 <Link href="/">
                   <span>Home</span>
                 </Link>
