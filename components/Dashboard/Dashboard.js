@@ -61,7 +61,8 @@ class Dashboard extends React.Component {
 
       const data = await res.json();
       if (res.status !== 200) throw Error("Error in unenrolling");
-      this.filterEnrollments(enrollment_id);
+      // this.filterEnrollments(enrollment_id);
+      this.getEnrollments();
     } catch (err) {
       this.setState({ gettingEnrollments: true });
       this.setState({ gettingEnrollments: false });
@@ -71,7 +72,7 @@ class Dashboard extends React.Component {
   getEnrollments = async () => {
     // Getting the enrollments
     let { token } = this.props;
-    // console.log(token);
+    this.setState({ gettingEnrollments: true });
 
     try {
       const res = await fetch(base_url + "/dashboard", {

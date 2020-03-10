@@ -3,6 +3,7 @@ import React from "react";
 import { Row, Col, Alert, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
+import Router from "next/router";
 
 import { isLogged } from "./../../utils/auth";
 import Event from "./Event";
@@ -45,9 +46,8 @@ class Events extends React.Component {
       const data = await res.json();
       if (res.status !== 200)
         this.showErr(data.message + ". Please refresh the page");
-      this.showMsg("You are successfully enrolled!");
-      // Filtering the events
-      this.filterEvents(event_id);
+      // this.showMsg("You are successfully enrolled!");
+      Router.push("/dashboard");
     } catch (err) {
       this.showErr(
         err.message ||

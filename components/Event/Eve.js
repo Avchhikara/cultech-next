@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Card, CardBody, Badge, Collapse, Button } from "reactstrap";
+import { Card, CardBody, Badge } from "reactstrap";
+import Link from "next/link";
 
 import formatDate from "./../../utils/formatDate";
 import formatTime from "./../../utils/formatTime";
@@ -12,8 +12,35 @@ const Eve = ({
   end_time,
   venue,
   details,
-  team_size
+  team_size,
+  token,
+  enrolled
 }) => {
+  const getLoggedInData = () => {
+    // console.log(enrolled);
+    if (enrolled) {
+      return (
+        <div>
+          You are already enrolled for the event, you can the access the event
+          on your{" "}
+          <Link href="/dashboard">
+            <span>Dashboard</span>
+          </Link>
+        </div>
+      );
+    }
+    return (
+      <div style={{ width: "100%" }}>
+        You are already logged in, Visit{" "}
+        <Link href="/events">
+          <span>Events</span>
+        </Link>{" "}
+        page to register for the event
+      </div>
+    );
+  };
+
+  // console.log(token);
   return (
     <Card className="mt-2">
       <CardBody>
@@ -41,8 +68,22 @@ const Eve = ({
           className="card-details mt-2"
           dangerouslySetInnerHTML={{ __html: details }}
         ></div>
-        <div className="card-bottom">
-          <div>to enroll, login and check the events page</div>
+        <div className="card-bottom alert alert-dark">
+          {token ? (
+            getLoggedInData()
+          ) : (
+            <div style={{ width: "100%" }}>
+              To Register for the event, please{" "}
+              <Link href="/login">
+                <span>Login</span>
+              </Link>{" "}
+              /{" "}
+              <Link href="/register">
+                <span>Register</span>
+              </Link>{" "}
+              first !
+            </div>
+          )}
         </div>
       </CardBody>
     </Card>

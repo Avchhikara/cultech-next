@@ -38,12 +38,11 @@ class Event extends React.Component {
       event: data.data,
       getting: false
     });
-    // console.log(data);
   };
 
   renderEvent = () => {
     const { event, enrolled, getting } = this.state;
-    // console.log(event);
+    const { token } = this.props;
     if (!event && !getting) {
       return <div>No such event is present</div>;
     } else if (!event && getting) {
@@ -56,7 +55,7 @@ class Event extends React.Component {
       // Shwo the event
       return (
         <Col sm={10} className="m-auto">
-          <Eve {...event} />
+          <Eve {...event} token={token} enrolled={enrolled} />
         </Col>
       );
     }

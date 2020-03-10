@@ -3,8 +3,8 @@ import Link from "next/link";
 
 import { Button } from "reactstrap";
 const LoggedIn = props => {
-  const { team_size, id, name, onEnroll } = props;
-  const [enrolling, setEnrolling] = useState(false);
+  const { team_size, id, name, onEnroll, isEnrolling } = props;
+  const [enrolling, setEnrolling] = useState(isEnrolling);
 
   return (
     <>
@@ -13,7 +13,6 @@ const LoggedIn = props => {
           color="success"
           size={"sm"}
           outline
-          disabled={enrolling}
           onClick={() => {
             setEnrolling(true);
             onEnroll(id);

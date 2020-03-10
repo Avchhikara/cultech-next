@@ -1,14 +1,13 @@
 import { Row, Col, Card, CardBody, Button, CardTitle } from "reactstrap";
 import Router from "next/router";
 
-import Particle from "./Particle";
+// import ParticleAnime from "./Particle";
 
 import Rules from "./Rules";
 
 const Home = props => {
   return (
     <React.Fragment>
-      <Particle />
       <Row className="home-fullpage">
         <Col sm={10} className="m-auto">
           <h1 className="display-4 text-success text-center">CulTech 2020</h1>

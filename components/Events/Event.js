@@ -24,9 +24,12 @@ const Event = ({
   // console.log(id);
   const toggle = () => {
     // Changing as per the directions given by Deepanshu Sir
-    // Router.push(`/event/${id}`);
-    Router.push("/login");
+    Router.push(`/event/${id}`);
+    // Router.push("/login");
   };
+
+  const enrolling = false;
+
   return (
     <Card className="mt-2">
       <CardBody>
@@ -62,15 +65,15 @@ const Event = ({
               id={id}
               team_size={team_size}
               onEnroll={onEnroll}
+              isEnrolling={enrolling}
             />
           ) : (
             <NotLoggedIn team_size={team_size} />
           )}
-          {!isLogged && (
-            <span className="read-more-link" color="light" onClick={toggle}>
-              Show {fullMode ? "less" : "more"}
-            </span>
-          )}
+
+          <span className="read-more-link" color="light" onClick={toggle}>
+            Show {fullMode ? "less" : "more"}
+          </span>
         </div>
       </CardBody>
     </Card>
