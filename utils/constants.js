@@ -1,3 +1,3 @@
-export const base_url = "https://cultech-back.herokuapp.com";
+export const base_url = "http://localhost:1234";
 
 export const app_url = "https://cultech.now.sh";
