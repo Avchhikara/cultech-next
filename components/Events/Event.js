@@ -23,7 +23,9 @@ const Event = ({
   const [fullMode, setFullMode] = useState(false);
   // console.log(id);
   const toggle = () => {
-    Router.push(`/event/${id}`);
+    // Changing as per the directions given by Deepanshu Sir
+    // Router.push(`/event/${id}`);
+    Router.push("/login");
   };
   return (
     <Card className="mt-2">
@@ -64,9 +66,11 @@ const Event = ({
           ) : (
             <NotLoggedIn team_size={team_size} />
           )}
-          <span className="read-more-link" color="light" onClick={toggle}>
-            Show {fullMode ? "less" : "more"}
-          </span>
+          {!isLogged && (
+            <span className="read-more-link" color="light" onClick={toggle}>
+              Show {fullMode ? "less" : "more"}
+            </span>
+          )}
         </div>
       </CardBody>
     </Card>

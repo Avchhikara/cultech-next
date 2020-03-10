@@ -80,3 +80,12 @@ div.footer ul {
 .home-fullpage {
   height: 80vh;
 }
+
+/* Adding custom styling to the cards */
+div.card {
+  box-shadow: 2px 3px 3px #eee;
+}
+
+div.card:hover {
+  box-shadow: 2px 16px 16px #eee;
+}
