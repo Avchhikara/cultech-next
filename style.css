@@ -87,7 +87,8 @@ div.footer ul {
  */
 
 .home-fullpage {
-  min-height: 70vh;
+  /* min-height: 70vh; */
+  margin-top: 16px;
 }
 
 div.back-image-dcrust {
@@ -118,4 +119,23 @@ div.card {
 
 div.card:hover {
   box-shadow: 2px 16px 16px rgb(235, 243, 237);
+}
+
+.homepage {
+  font-family: cursive;
+}
+
+.homepage div.particle-js-homepage {
+  position: static;
+  height: 100%;
+  /* width: 100%; */
+}
+
+div.carousel {
+  height: 50vh;
+}
+
+.carousel img {
+  height: 50vh;
+  width: 100%;
 }

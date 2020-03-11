@@ -25,6 +25,7 @@ class MyApp extends App {
         <Head>
           {/* Import CSS for nprogress */}
           <link rel="stylesheet" type="text/css" href="/nprogress.css" />
+
           <title>CulTech - Cultural and Technical fest of ECE department</title>
         </Head>
         <style jsx>{`

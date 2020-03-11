@@ -1,13 +1,18 @@
 import { Row, Col, Card, CardBody, Button, CardTitle } from "reactstrap";
 import Router from "next/router";
 
-// import ParticleAnime from "./Particle";
-
 import Rules from "./Rules";
+import CarouselComp from "./Carousel";
+import Details from "./Details";
 
 const Home = props => {
   return (
-    <React.Fragment>
+    <div className="homepage">
+      <section className="homepage-photos row">
+        <Col>
+          <CarouselComp />
+        </Col>
+      </section>
       <Row className="home-fullpage">
         <Col sm={10} className="m-auto">
           <h1 className="display-4 text-success text-center">CulTech 2020</h1>
@@ -16,13 +21,16 @@ const Home = props => {
           </div>
         </Col>
       </Row>
-      <Row className="homepage_morebutton">
-        <Col sm={10} className="m-auto text-center">
-          <a href="#more" className="m-auto">
-            &#x2193;
-          </a>
+
+      <Row>
+        <Col md="6">
+          <Details question="Where ?" answer="ECE Department" />
+        </Col>
+        <Col md="6">
+          <Details question="When" answer="19-20 March, 2020" />
         </Col>
       </Row>
+
       <Row className="mt-4" id="more">
         <Col sm={10} className="m-auto">
           <h4 className="text-success">What is it?</h4>
@@ -58,7 +66,7 @@ const Home = props => {
           </Card>
         </Col>
       </Row>
-    </React.Fragment>
+    </div>
   );
 };
 export default Home;
