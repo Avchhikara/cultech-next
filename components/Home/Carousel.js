@@ -10,27 +10,23 @@ import {
 const items = [
   {
     src:
-      "https://res.cloudinary.com/mrmagician/image/upload/v1583760960/dcrust1_bxe05v.jpg",
-    altText: "Slide 1",
-    caption: "Slide 1"
+      "https://res.cloudinary.com/mrmagician/image/upload/v1583792412/eced_fbfunz.png"
   },
   {
     src:
-      "https://res.cloudinary.com/mrmagician/image/upload/v1583760958/dcrust2_pwmxrq.jpg",
-    altText: "Slide 2",
-    caption: "Slide 2"
+      "https://res.cloudinary.com/mrmagician/image/upload/v1583760960/dcrust1_bxe05v.jpg"
   },
   {
     src:
-      "https://res.cloudinary.com/mrmagician/image/upload/v1583760966/dcrust3_qk7eo2.jpg",
-    altText: "Slide 3",
-    caption: "Slide 3"
+      "https://res.cloudinary.com/mrmagician/image/upload/v1583760958/dcrust2_pwmxrq.jpg"
   },
   {
     src:
-      "https://res.cloudinary.com/mrmagician/image/upload/v1583760954/dcrust4_egbk22.jpg",
-    altText: "Slide 3",
-    caption: "Slide 3"
+      "https://res.cloudinary.com/mrmagician/image/upload/v1583760966/dcrust3_qk7eo2.jpg"
+  },
+  {
+    src:
+      "https://res.cloudinary.com/mrmagician/image/upload/v1583760954/dcrust4_egbk22.jpg"
   }
 ];
 
@@ -62,7 +58,7 @@ const CarouselComp = props => {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.src} alt={item.altText} />
+        <img src={item.src} alt={item.altText} className="img-fluid" />
         <CarouselCaption
           captionText={item.caption}
           captionHeader={item.caption}
