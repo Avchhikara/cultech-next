@@ -17,7 +17,15 @@ const Home = props => {
         <Col sm={10} className="m-auto">
           <h1 className="display-4 text-success text-center">CulTech 2020</h1>
           <div className="lead text-center">
-            Come and witness the ir-resist-able
+            Come and witness the ir-resist-able{" "}
+            <em>
+              organised by{" "}
+              <img
+                src="https://res.cloudinary.com/mrmagician/image/upload/v1583833007/intechlogo_wq6bve.jpg"
+                alt="intec logo"
+                className="img-fluid organised-by-img"
+              />
+            </em>
           </div>
         </Col>
       </Row>
@@ -27,7 +35,7 @@ const Home = props => {
           <Details question="Where ?" answer="ECE Department" />
         </Col>
         <Col md="6">
-          <Details question="When" answer="19-20 March, 2020" />
+          <Details question="When ?" answer="19-20 March, 2020" />
         </Col>
       </Row>
 
