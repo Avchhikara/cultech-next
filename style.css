@@ -86,6 +86,9 @@ div.footer ul {
  } 
  */
 
+.homepage {
+  font-family: cursive;
+}
 .home-fullpage {
   /* min-height: 70vh; */
   margin-top: 16px;
@@ -119,10 +122,6 @@ div.card {
 
 div.card:hover {
   box-shadow: 2px 16px 16px rgb(235, 243, 237);
-}
-
-.homepage {
-  font-family: cursive;
 }
 
 .homepage div.particle-js-homepage {
