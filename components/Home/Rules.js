@@ -12,6 +12,10 @@ const Rules = () => {
           Only online registrations are allowed, no offline registration will be
           entertained!
         </li>
+        <li>
+          Prizes will be distributed in Civil Conference Hall on Friday, March
+          20, 2020 at 1:45 PM.
+        </li>
       </ul>
     </>
   );

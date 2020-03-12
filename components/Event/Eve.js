@@ -42,7 +42,7 @@ const Eve = ({
 
   // console.log(token);
   return (
-    <Card className="mt-2">
+    <Card className="mt-2 bg-dark text-light">
       <CardBody>
         <div className="card-head">
           <h5>{name}</h5>
