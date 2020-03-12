@@ -3,18 +3,15 @@ import Router from "next/router";
 
 import Rules from "./Rules";
 import CarouselComp from "./Carousel";
-import Details from "./Details";
+// import Details from "./Details";
+import About from "./About";
+import Sponsors from "./Sponsors";
 
 const Home = props => {
   return (
     <div className="homepage">
-      <section className="homepage-photos row">
-        <Col>
-          <CarouselComp />
-        </Col>
-      </section>
-      <Row className="home-fullpage">
-        <Col sm={10} className="m-auto">
+      <section className="homepage-top row">
+        <Col md="6">
           <h1 className="display-4 text-success text-center">CulTech 2020</h1>
           <div className="lead text-center">
             Come and witness the ir-resist-able{" "}
@@ -28,27 +25,13 @@ const Home = props => {
             </em>
           </div>
         </Col>
-      </Row>
-
-      <Row>
         <Col md="6">
-          <Details question="Where ?" answer="ECE Department" />
+          <CarouselComp />
         </Col>
-        <Col md="6">
-          <Details question="When ?" answer="19-20 March, 2020" />
-        </Col>
-      </Row>
-
+      </section>
+      <About />
+      <Sponsors />
       <Row className="mt-4" id="more">
-        <Col sm={10} className="m-auto">
-          <h4 className="text-success">What is it?</h4>
-          <p>
-            Cultech is the Cultural and Technical fest organised by INTEC
-            society annually. INTEC is the official society representing ECE
-            department in DCRUST Murthal.
-          </p>
-        </Col>
-
         <Col sm={10} className="m-auto">
           <h4 className="text-success">Rules common to all</h4>
           <Rules />
