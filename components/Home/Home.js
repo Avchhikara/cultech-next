@@ -11,7 +11,7 @@ const Home = props => {
   return (
     <div className="homepage">
       <section className="homepage-top row">
-        <Col md="6">
+        <Col md="6 mb-4">
           <h1 className="display-4 text-success text-center">CulTech 2020</h1>
           <div className="lead text-center">
             Come and witness the ir-resist-able{" "}
@@ -23,6 +23,18 @@ const Home = props => {
                 className="img-fluid organised-by-img"
               />
             </em>
+          </div>
+          <div className="text-center">
+            <Button
+              color="success"
+              size="lg"
+              outline
+              onClick={() => {
+                Router.push("/events");
+              }}
+            >
+              Enroll here
+            </Button>
           </div>
         </Col>
         <Col md="6">
@@ -39,23 +51,7 @@ const Home = props => {
       </Row>
 
       <Row className="mt-4">
-        <Col sm={10} className="m-auto mt-3 ">
-          <Card color="light">
-            <CardBody>
-              <CardTitle>Want to enroll in events?</CardTitle>
-              <Button
-                color="success"
-                size="sm"
-                outline
-                onClick={() => {
-                  Router.push("/events");
-                }}
-              >
-                Click here
-              </Button>
-            </CardBody>
-          </Card>
-        </Col>
+        <Col sm={10} className="m-auto mt-3 "></Col>
       </Row>
     </div>
   );
