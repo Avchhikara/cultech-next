@@ -12,17 +12,19 @@ const Home = props => {
     <div className="homepage">
       <section className="homepage-top row">
         <Col md="6 mb-4">
-          <h1 className="display-4 text-success text-center">CulTech 2020</h1>
+          <h1 className="display-4 text-success text-center">CulTech 2k20</h1>
           <div className="lead text-center">
-            Come and witness the ir-resist-able{" "}
-            <em>
-              organised by{" "}
-              <img
-                src="https://res.cloudinary.com/mrmagician/image/upload/v1583833007/intechlogo_wq6bve.jpg"
-                alt="intec logo"
-                className="img-fluid organised-by-img"
-              />
-            </em>
+            <span className="main-line">
+              Cultural and Technical all under one Scope{" "}
+            </span>
+            <br />
+            <em>organised by </em>
+            <br />
+            <img
+              src="https://res.cloudinary.com/mrmagician/image/upload/v1583833007/intechlogo_wq6bve.jpg"
+              alt="intec logo"
+              className="img-fluid organised-by-img"
+            />
           </div>
           <div className="text-center">
             <Button
@@ -42,7 +44,6 @@ const Home = props => {
         </Col>
       </section>
       <About />
-      <Sponsors />
       <Row className="mt-4" id="more">
         <Col sm={10} className="m-auto">
           <h4 className="text-success">Rules common to all</h4>

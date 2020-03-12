@@ -38,17 +38,6 @@ const Header = props => {
           <Nav navbar className="ml-auto">
             <NavItem>
               <NavLink>
-                <a
-                  href="https://drive.google.com/file/d/1NrdVW60RJmUh7b1HD4DMl26uMWH4Z9hL/view?usp=sharing"
-                  className="nav-link"
-                  target="_blank"
-                >
-                  Brochure
-                </a>
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink>
                 <Link href="/">
                   <span>Home</span>
                 </Link>
@@ -59,6 +48,17 @@ const Header = props => {
                 <Link href="/events">
                   <span>Events</span>
                 </Link>
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink>
+                <a
+                  href="https://drive.google.com/file/d/1NrdVW60RJmUh7b1HD4DMl26uMWH4Z9hL/view?usp=sharing"
+                  className="nav-link"
+                  target="_blank"
+                >
+                  Brochure
+                </a>
               </NavLink>
             </NavItem>
             {isLogged ? <LoggedIn /> : <NotLoggedIn />}

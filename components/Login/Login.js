@@ -152,6 +152,11 @@ class Login extends React.Component {
                       required
                       onChange={this.onPasswordChange}
                     />
+                    <div className="text-font-weight-light text-right">
+                      <Link href="/forget-password">
+                        <span className="next-link">Forget Password</span>
+                      </Link>
+                    </div>
                   </Col>
                 </FormGroup>
                 <Col sm={12} className="text-center mt-3">

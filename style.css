@@ -182,3 +182,23 @@ div.carousel {
 }
 
 /* about section ends *********************/
+
+.main-line {
+  font-size: 1.5em;
+}
+
+.display-4 .text-success .text-center {
+  font-size: 4em;
+}
+
+.next-link,
+a {
+  color: green;
+}
+
+.next-link:hover,
+a:hover {
+  color: green;
+  cursor: pointer;
+  text-decoration: underline;
+}
