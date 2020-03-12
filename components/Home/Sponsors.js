@@ -3,9 +3,7 @@ import React from "react";
 import { Card, CardImg, Col, Row } from "reactstrap";
 
 const spons = [
-  "https://res.cloudinary.com/mrmagician/image/upload/v1583988980/1_y4nokx.png",
-  "https://res.cloudinary.com/mrmagician/image/upload/v1583988980/3_wmbwak.png",
-  "https://res.cloudinary.com/mrmagician/image/upload/v1583988980/2_pybnsx.png"
+  "https://res.cloudinary.com/mrmagician/image/upload/v1584022820/food_card_t0lhzv.jpg"
 ];
 
 const Sponsors = () => {
@@ -17,7 +15,7 @@ const Sponsors = () => {
         </div>
         <Row>
           {spons.map((sp, index) => (
-            <Col md={4} key={index} className="mt-4">
+            <Col md={4} key={index} className="m-auto mt-4">
               <Card>
                 <CardImg src={sp} alt="" />
               </Card>

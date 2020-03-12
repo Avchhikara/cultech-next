@@ -44,13 +44,13 @@ const Home = props => {
         </Col>
       </section>
       <About />
+      <Sponsors />
       <Row className="mt-4" id="more">
         <Col sm={10} className="m-auto">
           <h4 className="text-success">Rules common to all</h4>
           <Rules />
         </Col>
       </Row>
-
       <Row className="mt-4">
         <Col sm={10} className="m-auto mt-3 "></Col>
       </Row>
