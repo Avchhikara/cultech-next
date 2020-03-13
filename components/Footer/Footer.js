@@ -8,7 +8,7 @@ const Footer = props => {
       <Jumbotron className="text-center">
         <Row>
           <Col sm={6} className="mt-3">
-            <h5>React us at</h5>
+            <h5>Reach us at</h5>
             ECE Department, <br />
             DCRUST Murthal, <br />
             Sonipat, Haryana, <br />

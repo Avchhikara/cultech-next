@@ -16,6 +16,7 @@ const Rules = () => {
           Prizes will be distributed in Civil Conference Hall on Friday, March
           20, 2020 at 1:45 PM.
         </li>
+        <li>Without ID Card, no participation will be considered.</li>
       </ul>
     </>
   );

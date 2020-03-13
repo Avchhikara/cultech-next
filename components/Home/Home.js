@@ -6,6 +6,7 @@ import CarouselComp from "./Carousel";
 // import Details from "./Details";
 import About from "./About";
 import Sponsors from "./Sponsors";
+import Prize from "./Prize";
 
 const Home = props => {
   return (
