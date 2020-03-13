@@ -109,7 +109,7 @@ class Register extends React.Component {
     if (!(phone && validatePhone(phone))) {
       this.setError("Phone number should be of 10 digits only");
     } else if (!(branch && validateBranch(branch))) {
-      this.setError("Please select a branch");
+      this.setError("Please enter your branch");
     } else if (!(year && validateYear(year))) {
       this.setError("Please select a year");
     } else {

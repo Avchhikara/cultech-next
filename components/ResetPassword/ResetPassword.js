@@ -13,20 +13,22 @@ import {
   Alert
 } from "reactstrap";
 
-import { validateEmail } from "./../../utils/validate";
+import { validatePassword } from "./../../utils/validate";
 import { base_url } from "./../../utils/constants";
 
-const ForgetPassword = props => {
+const ForgetPassword = ({ token }) => {
+  //   console.log(token);
   const handleSubmit = async e => {
     e.preventDefault();
-    if (validateEmail(email)) {
+    if (validatePassword(password)) {
       // Here it will make the request to backend
       setRequesting(true);
       try {
-        const res = await fetch(base_url + "/forget-password", {
+        const res = await fetch(base_url + "/reset-password", {
           method: "POST",
           body: JSON.stringify({
-            email
+            password,
+            token
           }),
           headers: {
             "content-type": "application/json"
@@ -51,7 +53,7 @@ const ForgetPassword = props => {
       setRequesting(false);
     } else {
       setResponse({
-        message: email + " is not a valid email id",
+        message: password + " is not a valid password",
         status: 400
       });
       resetResponse();
@@ -70,7 +72,7 @@ const ForgetPassword = props => {
   });
 
   const [requesting, setRequesting] = useState(false);
-  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const { message, status } = response;
 
@@ -80,7 +82,7 @@ const ForgetPassword = props => {
         <Card>
           <CardBody>
             <h4 className="text-center mb-3">
-              <span className="text-success">Forgot</span> Password
+              <span className="text-success">Reset</span> Password
             </h4>
             {message && (
               <Alert color={status === 200 ? "success" : "danger"}>
@@ -89,15 +91,15 @@ const ForgetPassword = props => {
             )}
             <Form onSubmit={handleSubmit}>
               <FormGroup row>
-                <Label for="email" sm={3}>
-                  Email
+                <Label for="password" sm={3}>
+                  New Password
                 </Label>
                 <Col sm={9}>
                   <Input
-                    type="email"
-                    id="email"
+                    type="password"
+                    id="password"
                     required
-                    onChange={e => setEmail(e.target.value)}
+                    onChange={e => setPassword(e.target.value)}
                     autoFocus
                   />
                 </Col>
@@ -105,7 +107,7 @@ const ForgetPassword = props => {
 
               <Col sm={12} className="text-center mt-3">
                 <Button color="success" disabled={requesting}>
-                  {requesting ? "Requesting..." : "Request Reset Link"}
+                  {requesting ? "Resetting..." : "Reset Password"}
                 </Button>
               </Col>
             </Form>

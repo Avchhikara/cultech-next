@@ -25,20 +25,12 @@ const Form2 = ({ onBranchChange, onYearChange, onPhoneChange, phone }) => {
           Branch
         </Label>
         <Col sm={9}>
-          <Input type="select" id="branch" required onChange={onBranchChange}>
-            <option defaultValue value="0">
-              Select branch
-            </option>
-            <option value="CSE">CSE</option>
-            <option value="ECE">ECE</option>
-            <option value="ME">ME</option>
-            <option value="CE">CE</option>
-            <option value="EE">EE</option>
-            <option value="BArch">BArch</option>
-            <option value="Phy">Physics dept</option>
-            <option value="Chem">Chemistry dept</option>
-            <option value="Maths">Maths dept</option>
-          </Input>
+          <Input
+            type="text"
+            id="branch"
+            required
+            onChange={onBranchChange}
+          ></Input>
         </Col>
       </FormGroup>
 
