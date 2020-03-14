@@ -52,6 +52,7 @@ const Home = props => {
           <Rules />
         </Col>
       </Row>
+      <Prize />
       <Row className="mt-4">
         <Col sm={10} className="m-auto mt-3 "></Col>
       </Row>
