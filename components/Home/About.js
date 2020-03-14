@@ -20,8 +20,8 @@ const About = () => {
           <Col lg="3">
             <h3>When</h3>
             <p>
-              Thusrday and Friday <br />
-              19-20 March, 2020
+              Postponed <br />
+              Until futher notice
             </p>
           </Col>
         </Row>
